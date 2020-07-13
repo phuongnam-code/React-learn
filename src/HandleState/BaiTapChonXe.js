@@ -24,7 +24,7 @@ export default class BaiTapChonXe extends Component {
                <h1 className='my-4'>Bài tập chọn xe</h1>
                <div class="row">
                   <div class='col-6'>
-                     <img src={'./img/red-car.jpg'} alt='car' className='w-100' />
+                     <img src={this.state.srcImg} alt='car' className='w-100' />
                      <strong>Honda Civic</strong>
                   </div>
                   <div class='col-6'>
