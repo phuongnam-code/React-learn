@@ -6,6 +6,10 @@ import DataBinding from "./DataBinding/DataBinding";
 import EventBinding from "./EventBinding/EventBinding";
 import HandleState from "./HandleState/HandleState";
 import BaiTapChonXe from "./HandleState/BaiTapChonXe";
+import RenderWithMap from "./renderWithMap/RenderWithMap";
+import EXRenderMap from "./EXRenderMap/EXRenderMap";
+import DemoProps from "./Props/DemoProps";
+import BTProducList from "./Props/BTProducList";
 
 function App() {
     return (
@@ -14,7 +18,11 @@ function App() {
             {/* <DataBinding /> */}
             {/* <EventBinding /> */}
             {/* <HandleState /> */}
-            <BaiTapChonXe />
+            {/* <BaiTapChonXe /> */}
+            {/* <RenderWithMap /> */}
+            {/* <EXRenderMap /> */}
+            {/* <DemoProps /> */}
+            <BTProducList />
         </div>
     );
 }
