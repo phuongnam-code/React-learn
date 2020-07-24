@@ -12,15 +12,30 @@ export default class ModalGioHang extends Component {
                     <td>
                         <img src={sp.hinhAnh} style={{ width: '10%' }} />
                     </td>
-                    <td>{sp.soLuong}</td>
+                    <td>
+                        <button onClick={() => {
+                            this.props.tangGiamSoLuong(sp.maSP, true)
+                        }}>+</button>
+                        {sp.soLuong}
+                        <button onClick={() => {
+                            this.props.tangGiamSoLuong(sp.maSP, false)
+                        }}>-</button>
+                    </td>
                     <td>{sp.gia}</td>
                     <td>{sp.soLuong * sp.gia}</td>
                     <td>
-                        <button>Xóa</button>
+                        <button onClick={() => {
+                            this.props.xoaGioHang(sp.maSP)
+                        }}>Xóa</button>
                     </td>
                 </tr>
             )
         })
+    }
+    tinhTongTien = () => {
+        return this.props.gioHang.reduce((tongTien, spGH, index) => {
+            return tongTien += spGH.soLuong * spGH.gia;
+        }, 0)
     }
     render() {
         return (
@@ -41,6 +56,15 @@ export default class ModalGioHang extends Component {
                     <tbody>
                         {this.renderGioHang()}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan='4'></td>
+                            <td>Tổng tiền</td>
+                            <td>
+                                {this.tinhTongTien().toLocaleString()}
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         )

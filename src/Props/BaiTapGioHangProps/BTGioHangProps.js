@@ -47,6 +47,43 @@ export default class BTGioHangProps extends Component {
             gioHang: gioHangCapNhat
         })
     }
+
+    xoaGioHang = (maSP) => {
+        console.log(maSP);
+        //setState
+        let gioHangCapNhat = [...this.state.gioHang];
+        let index = gioHangCapNhat.findIndex(spGH => spGH.maSP === maSP);
+
+        if (index !== -1) {
+            gioHangCapNhat.splice(index, 1)
+        }
+
+        this.setState({
+            gioHang: gioHangCapNhat
+        })
+    }
+
+    tangGiamSoLuong = (maSP, tangGiam) => {
+        //tangGiam == true là tăng, tangGiam == false là giảm
+        let gioHangCapNhat = [...this.state.gioHang];
+        let index = gioHangCapNhat.findIndex(spGH => spGH.maSP === maSP);
+        if (index !== -1) {
+            if (tangGiam === true) {
+                gioHangCapNhat[index].soLuong += 1;
+            } else {
+                if (gioHangCapNhat[index].soLuong < 2) {
+                    alert('Số lượng tối thiểu là 1');
+                    return
+                } else {
+                    gioHangCapNhat[index].soLuong -= 1;
+                }
+            }
+        }
+
+        this.setState({
+            gioHang: gioHangCapNhat
+        })
+    }
     render() {
         return (
             <div className='container'>
@@ -54,7 +91,11 @@ export default class BTGioHangProps extends Component {
                     mangSP={this.arrProduct}
                     themGioHang={this.themGioHang}
                 />
-                <ModalGioHang gioHang={this.state.gioHang} />
+                <ModalGioHang
+                    tangGiamSoLuong={this.tangGiamSoLuong}
+                    xoaGioHang={this.xoaGioHang}
+                    gioHang={this.state.gioHang}
+                />
             </div>
         )
     }
