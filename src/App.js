@@ -13,6 +13,7 @@ import BTProducList from "./Props/BTProducList";
 import DemoPropsFunction from "./Props/DemoPropsFunction/DemoPropsFunction";
 import BTGioHangProps from "./Props/BaiTapGioHangProps/BTGioHangProps";
 import BaiTapGioHangRedux from "./ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux";
+import BaiTapGameBauCua from "./ReduxDemo/BaiTapGameBauCua/BaiTapGameBauCua";
 
 function App() {
     return (
@@ -28,7 +29,8 @@ function App() {
             {/* <BTProducList /> */}
             {/* <DemoPropsFunction /> */}
             {/* <BTGioHangProps /> */}
-            <BaiTapGioHangRedux />
+            {/* <BaiTapGioHangRedux /> */}
+            <BaiTapGameBauCua />
         </div>
     );
 }

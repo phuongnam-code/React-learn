@@ -13,11 +13,22 @@ class GioHangRedux extends Component {
                     <td>
                         <img src={sp.hinhAnh} style={{ width: '10%' }} />
                     </td>
-                    <td>{sp.soLuong}</td>
+                    <td>
+                        <button onClick={() => {
+                            this.props.tangGiamSoLuong(sp.maSP, true)
+                        }}>+</button>
+                        <button onClick={() => {
+                            this.props.tangGiamSoLuong(sp.maSP, false)
+                        }}>-</button>
+                        {sp.soLuong}
+
+                    </td>
                     <td>{sp.gia}</td>
                     <td>{(sp.soLuong * sp.gia).toLocaleString()}</td>
                     <td>
-                        <button>Xóa</button>
+                        <button onClick={() => {
+                            this.props.xoaGioHang(sp.maSP)
+                        }}>Xóa</button>
                     </td>
                 </tr>
             )
@@ -34,13 +45,22 @@ class GioHangRedux extends Component {
                             <th>Hình ảnh</th>
                             <th>Giá bán</th>
                             <th>Số lượng</th>
+                            <th>Giá bán</th>
                             <th>Thành tiền</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.renderGioHang()}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan='4'></td>
+                            <th>Tổng tiền</th>
+                            <td colSpan='2'>{this.props.gioHang.reduce((tongTien, spGH, index) => {
+                                return tongTien += spGH.soLuong * spGH.gia;
+                            }, 0).toLocaleString()}</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         )
@@ -53,5 +73,28 @@ const mapStateToProps = (state) => {//state ứng tới rootReducer
         gioHang: state.GioHangReducer.stateGioHang
     }
 }
-
-export default connect(mapStateToProps)(GioHangRedux)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        xoaGioHang: (maSP) => {
+            console.log(maSP);
+            let action = {
+                type: 'XOA_GIO_HANG',
+                maSP: maSP
+            }
+            // dùng hàm dispatch của redux đưa dữ liệu lên reducer
+            dispatch(action);
+        },
+        tangGiamSoLuong: (maSP, tangGiam) => {
+            // tangGiam = true là tăng số lượng, 
+            // tangGiam = false là giảm số lượng.
+            let action = {
+                type: 'TANG_GIAM_SO_LUONG',
+                maSP: maSP,
+                tangGiam: tangGiam
+            }
+            //xử lý dispatch
+            dispatch(action);
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(GioHangRedux)
