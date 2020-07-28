@@ -4,22 +4,29 @@ import { connect } from 'react-redux'
 class XucXacComponent extends Component {
     render() {
         return (
-            <div className='row'>
-                <div className='col-12 '>
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <p style={{
-                            width: '300px', height: '300px',
-                            background: 'antiquewhite', borderRadius: '50%',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center'
-                        }}>
-                            <img src={this.props.xucXac[0].hinhAnh} alt width='20%' />
-                            <img src={this.props.xucXac[1].hinhAnh} alt width='20%' className='mx-3' />
-                            <img src={this.props.xucXac[2].hinhAnh} alt width='20%' />
-                        </p>
+
+            <div>
+                <div className='mt-5'>
+                    <div style={{ position: 'relative' }}>
+                        <img src='./img/gameBauCua/Dia.png' width='300px' alt />
                     </div>
-                    <button className='mt-4 btn btn-danger'>Xóc</button>
+                    <div>
+                        <div style={{ position: 'absolute', top: '22%', left: '28%' }}>
+                            <img src={this.props.xucXac[0].hinhAnh} alt width='30%' />
+                        </div>
+                        <div style={{ position: 'absolute', top: '37%', left: '17%' }}>
+                            <img src={this.props.xucXac[1].hinhAnh} alt width='30%' />
+                        </div>
+                        <div style={{ position: 'absolute', top: '37%', left: '36%' }}>
+                            <img src={this.props.xucXac[2].hinhAnh} alt width='30%' />
+                        </div>
+                    </div>
+                </div>
+                <div className='mt-2' style={{ cursor: 'pointer' }}>
+                    <img src='./img/gameBauCua/soc.png' width='40%' />
                 </div>
             </div>
+
         )
     }
 }

@@ -1,6 +1,6 @@
 @font-face{
 	font-family:PonyFont;
-	src:url('./img/gameBauCua/Pony.ttf')
+	src:url('Pony.ttf')
 }
 .gameBauCua{
 	font-family:PonyFont;
