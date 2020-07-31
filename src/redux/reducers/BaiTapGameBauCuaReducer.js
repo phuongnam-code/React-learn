@@ -16,7 +16,71 @@ const stateDefault = {
 }
 
 const BaiTapGameBauCuaReducer = (state = stateDefault, action) => {
-    return { ...state }
+    switch (action.type) {
+        case 'DAT_CUOC': {
+            let mangCuocUpdate = [...state.dsCuoc];
+            let index = mangCuocUpdate.findIndex((quanCuoc) => quanCuoc.ma === action.maQuanCuoc);
+            if (index !== -1) {
+                if (action.tangGiam) {
+                    if (state.diemThuong > 0) {
+                        mangCuocUpdate[index].diemCuoc += 100;
+                        state.diemThuong -= 100;
+                    }
+                } else {
+                    if (mangCuocUpdate[index].diemCuoc > 0) {
+                        mangCuocUpdate[index].diemCuoc -= 100;
+                        state.diemThuong += 100;
+                    }
+                }
+            }
+            return { ...state, dsCuoc: mangCuocUpdate }
+        }
+        case 'XOC': {
+            //1. xử lý random xúc xắc
+            let mangXucXacRandom = [];
+            for (let i = 0; i < 3; i++) {
+                //random ra 1 số ngẫu nhiên từ 0 -> 5
+                let numberRandom = Math.floor(Math.random() * 6);
+                console.log(numberRandom);
+                //tạo ra 1 viên xúc xắc từ numberRandom
+                let xucXacRandom = {
+                    ma: state.dsCuoc[numberRandom].ma,
+                    hinhAnh: state.dsCuoc[numberRandom].hinhAnh,
+                }
+                mangXucXacRandom.push(xucXacRandom);
+            }
+            //bỏ xúc xắc ngẫu nhiên vào mảng
+            state.xucXac = mangXucXacRandom;
+
+            //2. xử lý trúng thưởng
+            for (const xucXacNN of mangXucXacRandom) {
+                let indexMangCuoc = state.dsCuoc.findIndex((qc) => qc.ma === xucXacNN.ma);
+                if (indexMangCuoc !== -1) {
+                    state.diemThuong += state.dsCuoc[indexMangCuoc].diemCuoc;
+                }
+            }
+
+            //3. xử lý hoàn tiền
+            for (const quanCuoc of state.dsCuoc) {
+                let indexXucXac = mangXucXacRandom.findIndex((xx) => xx.ma === quanCuoc.ma);
+                if (indexXucXac !== -1) {
+                    state.diemThuong += quanCuoc.diemCuoc;
+
+                }
+            }
+
+            //4. xử lý mảng dsCuoc
+            state.dsCuoc = state.dsCuoc.map((qc, index) => {
+                return { ...qc, diemCuoc: 0 }
+            })
+            return { ...state }
+
+        }
+        default:
+            return { ...state }
+
+    }
+
 }
 
 export default BaiTapGameBauCuaReducer

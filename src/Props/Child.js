@@ -7,7 +7,7 @@ export default class Child extends Component {
         let { id, name, price, img } = this.props.sanPham;
         return (
             <div className="card text-left">
-                <img className="card-img-top" src={img} alt />
+                <img className="card-img-top" src={img} alt='' />
                 <div className="card-body">
                     <h4 className="card-title">{name}</h4>
                     <span>ID: {id}</span>

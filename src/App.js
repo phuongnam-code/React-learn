@@ -1,19 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import BaiTapLayout from "./Components/BaiTapLayout/BaiTapLayout";
-import DataBinding from "./DataBinding/DataBinding";
-import EventBinding from "./EventBinding/EventBinding";
-import HandleState from "./HandleState/HandleState";
-import BaiTapChonXe from "./HandleState/BaiTapChonXe";
-import RenderWithMap from "./renderWithMap/RenderWithMap";
-import EXRenderMap from "./EXRenderMap/EXRenderMap";
-import DemoProps from "./Props/DemoProps";
-import BTProducList from "./Props/BTProducList";
-import DemoPropsFunction from "./Props/DemoPropsFunction/DemoPropsFunction";
-import BTGioHangProps from "./Props/BaiTapGioHangProps/BTGioHangProps";
-import BaiTapGioHangRedux from "./ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux";
-import BaiTapGameBauCua from "./ReduxDemo/BaiTapGameBauCua/BaiTapGameBauCua";
+import BaiTapXucXac from "./ReduxDemo/BaiTapXucXac/BaiTapXucXac";
+// import BaiTapLayout from "./Components/BaiTapLayout/BaiTapLayout";
+// import DataBinding from "./DataBinding/DataBinding";
+// import EventBinding from "./EventBinding/EventBinding";
+// import HandleState from "./HandleState/HandleState";
+// import BaiTapChonXe from "./HandleState/BaiTapChonXe";
+// import RenderWithMap from "./renderWithMap/RenderWithMap";
+// import EXRenderMap from "./EXRenderMap/EXRenderMap";
+// import DemoProps from "./Props/DemoProps";
+// import BTProducList from "./Props/BTProducList";
+// import DemoPropsFunction from "./Props/DemoPropsFunction/DemoPropsFunction";
+// import BTGioHangProps from "./Props/BaiTapGioHangProps/BTGioHangProps";
+// import BaiTapGioHangRedux from "./ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux";
+// import BaiTapGameBauCua from "./ReduxDemo/BaiTapGameBauCua/BaiTapGameBauCua";
 
 function App() {
     return (
@@ -30,7 +31,8 @@ function App() {
             {/* <DemoPropsFunction /> */}
             {/* <BTGioHangProps /> */}
             {/* <BaiTapGioHangRedux /> */}
-            <BaiTapGameBauCua />
+            {/* <BaiTapGameBauCua /> */}
+            <BaiTapXucXac />
         </div>
     );
 }

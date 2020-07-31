@@ -9,7 +9,7 @@ export default class BaiTapGameBauCua extends Component {
             <div style={{ backgroundColor: '#FFA500', padding: '20px 0px' }}>
                 <div className={`container ${style.gameBauCua}`} >
                     <div>
-                        <img src='./img/gameBauCua/Logo.png' width='50%' alt />
+                        <img src='./img/gameBauCua/Logo.png' width='50%' alt='' />
                     </div>
                     <div className='row'>
                         <div className='col-12 text-center'>

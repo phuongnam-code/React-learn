@@ -11,7 +11,7 @@ class GioHangRedux extends Component {
                     <td>{sp.maSP}</td>
                     <td>{sp.tenSP}</td>
                     <td>
-                        <img src={sp.hinhAnh} style={{ width: '10%' }} />
+                        <img src={sp.hinhAnh} style={{ width: '10%' }} alt='' />
                     </td>
                     <td>
                         <button onClick={() => {
