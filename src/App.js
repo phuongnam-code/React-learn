@@ -1,7 +1,8 @@
 import React from "react";
 // import logo from "./logo.svg";
 import "./App.css";
-import BaiTapXucXac from "./ReduxDemo/BaiTapXucXac/BaiTapXucXac";
+// import BaiTapXucXac from "./ReduxDemo/BaiTapXucXac/BaiTapXucXac";
+import FormValidation from "./formValidation/FormValidation";
 // import BaiTapLayout from "./Components/BaiTapLayout/BaiTapLayout";
 // import DataBinding from "./DataBinding/DataBinding";
 // import EventBinding from "./EventBinding/EventBinding";
@@ -32,7 +33,8 @@ function App() {
             {/* <BTGioHangProps /> */}
             {/* <BaiTapGioHangRedux /> */}
             {/* <BaiTapGameBauCua /> */}
-            <BaiTapXucXac />
+            {/* <BaiTapXucXac /> */}
+            <FormValidation />
         </div>
     );
 }
