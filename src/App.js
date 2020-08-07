@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 // import BaiTapXucXac from "./ReduxDemo/BaiTapXucXac/BaiTapXucXac";
 import FormValidation from "./formValidation/FormValidation";
+import ReactLifeCycle from "./ReactLifeCycle/ReactLifeCycle";
 // import BaiTapLayout from "./Components/BaiTapLayout/BaiTapLayout";
 // import DataBinding from "./DataBinding/DataBinding";
 // import EventBinding from "./EventBinding/EventBinding";
@@ -35,6 +36,7 @@ function App() {
             {/* <BaiTapGameBauCua /> */}
             {/* <BaiTapXucXac /> */}
             <FormValidation />
+            {/* <ReactLifeCycle /> */}
         </div>
     );
 }
