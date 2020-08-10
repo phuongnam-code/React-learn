@@ -1,0 +1,1 @@
+export const layDanhSachPhim = 'LAY_DS_PHIM';
