@@ -6,7 +6,7 @@ class SanPhamRedux extends Component {
         let { sp } = this.props;
         return (
             <div className="card text-left">
-                <img className="card-img-top" src={sp.hinhAnh} alt />
+                <img className="card-img-top" src={sp.hinhAnh} alt='' />
                 <div className="card-body">
                     <h4 className="card-title">{sp.tenSP}</h4>
                     <p className="card-text">{sp.giaBan.toLocaleString()}</p>

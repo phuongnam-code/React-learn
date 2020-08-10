@@ -1,7 +1,7 @@
-import React from "react";
+import React, { PureComponent } from "react";
 // import logo from "./logo.svg";
 import "./App.css";
-import BaiTapXucXac from "./ReduxDemo/BaiTapXucXac/BaiTapXucXac";
+// import BaiTapXucXac from "./ReduxDemo/BaiTapXucXac/BaiTapXucXac";
 // import BaiTapLayout from "./Components/BaiTapLayout/BaiTapLayout";
 // import DataBinding from "./DataBinding/DataBinding";
 // import EventBinding from "./EventBinding/EventBinding";
@@ -15,6 +15,7 @@ import BaiTapXucXac from "./ReduxDemo/BaiTapXucXac/BaiTapXucXac";
 // import BTGioHangProps from "./Props/BaiTapGioHangProps/BTGioHangProps";
 // import BaiTapGioHangRedux from "./ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux";
 // import BaiTapGameBauCua from "./ReduxDemo/BaiTapGameBauCua/BaiTapGameBauCua";
+import PureComponentDemo from './PureComponent/PureComponentDemo'
 
 function App() {
     return (
@@ -32,7 +33,8 @@ function App() {
             {/* <BTGioHangProps /> */}
             {/* <BaiTapGioHangRedux /> */}
             {/* <BaiTapGameBauCua /> */}
-            <BaiTapXucXac />
+            {/* <BaiTapXucXac /> */}
+            <PureComponentDemo />
         </div>
     );
 }

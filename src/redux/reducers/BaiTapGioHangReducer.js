@@ -1,4 +1,4 @@
-import BaiTapGioHangRedux from "../../ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux"
+// import BaiTapGioHangRedux from "../../ReduxDemo/BaiTapGioHangRedux/BaiTapGioHangRedux"
 
 const stateDefault = {
     stateGioHang: [
@@ -7,7 +7,7 @@ const stateDefault = {
 }
 
 const BaiTapGioHangReducer = (state = stateDefault, action) => {
-    console.log('reducer', action)
+    // console.log('reducer', action)
     switch (action.type) {
         case 'THEM_GIO_HANG': {
             let gioHangCapNhat = [...state.stateGioHang];
