@@ -157,14 +157,17 @@ class FormValidation extends Component {
             </Fragment>
         )
     }
+    componentDidUpdate(preProps, preState) {
+        console.log('componentDidUpdate')
+        if (!_.isEqual(this.props.nguoiDungEdit, preProps.nguoiDungEdit)) {
+            this.setState({
+                values: this.props.nguoiDungEdit
+            })
+        }
+    }
 }
 
-// componentDidUpdate(preProps, preState) {
-//     console.log('componentDidUpdate')
-//     if (!_.isEqual(preProps.nguoiDungEdit, this.props.nguoiDungEdit)) {
 
-//     }
-// }
 
 const mapStateToProps = (state) => {
     return {
