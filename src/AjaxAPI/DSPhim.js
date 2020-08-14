@@ -10,14 +10,16 @@ class DSPhim extends Component {
     }
 
     renderDsPhim = () => {
-        return this.props.danhSachPhim.map(({ ID, Title, Image, ...restProps }, index) => {
+        return this.props.danhSachPhim.map(({ maPhim, tenPhim, hinhAnh, ...restProps }, index) => {
             return (
                 <div className='col-4' key={index}>
                     <div className="card text-left">
-                        <img className="card-img-top" src={Image} alt='' />
+                        <div width='70px'>
+                            <img className="card-img-top" src={hinhAnh} alt='' />
+                        </div>
                         <div className="card-body">
-                            <h4 className="card-title">{Title}</h4>
-                            <p className="card-text">id: {ID}</p>
+                            <h4 className="card-title">{tenPhim}</h4>
+                            <p className="card-text">id: {maPhim}</p>
                         </div>
                     </div>
                 </div>
